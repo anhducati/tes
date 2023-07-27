@@ -20,7 +20,7 @@
                     var userLongitude = position.coords.longitude;
 
                     // So sánh tọa độ của người dùng với tọa độ quy định
-                    var maxDistance = 0.01; // Độ chênh lệch tọa độ tối đa cho phép (khoảng 1km)
+                    var maxDistance = 0.1; // Độ chênh lệch tọa độ tối đa cho phép (khoảng 1km)
 
                     if (Math.abs(userLatitude - predefinedLatitude) <= maxDistance &&
                         Math.abs(userLongitude - predefinedLongitude) <= maxDistance) {
