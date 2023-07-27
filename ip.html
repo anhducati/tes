@@ -2,15 +2,18 @@
 <html>
 <head>
     <title>Lấy tọa độ người dùng</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
 </head>
 <body>
     <h1>Lấy tọa độ người dùng</h1>
 
     <button onclick="getLocation()">Lấy tọa độ</button>
 
-    <p id="latitude">Latitude: </p>
-    <p id="longitude">Longitude: </p>
-
+    <p id="latitude"> </p>
+    <p id="longitude"> </p>
     <script>
         // Hàm lấy tọa độ người dùng
         function getLocation() {
@@ -27,8 +30,8 @@
             var longitude = position.coords.longitude;
 
             // Hiển thị tọa độ lên trang web
-            document.getElementById("latitude").innerText = "Latitude: " + latitude;
-            document.getElementById("longitude").innerText = "Longitude: " + longitude;
+            document.getElementById("latitude").innerText = "Vĩ độ: " + latitude;
+            document.getElementById("longitude").innerText = "Kinh độ: " + longitude;
         }
     </script>
 </body>
