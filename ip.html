@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lấy tọa độ người dùng</title>
+</head>
+<body>
+    <h1>Lấy tọa độ người dùng</h1>
+
+    <button onclick="getLocation()">Lấy tọa độ</button>
+
+    <p id="latitude">Latitude: </p>
+    <p id="longitude">Longitude: </p>
+
+    <script>
+        // Hàm lấy tọa độ người dùng
+        function getLocation() {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                alert("Trình duyệt của bạn không hỗ trợ định vị!");
+            }
+        }
+
+        // Hàm hiển thị tọa độ lấy được
+        function showPosition(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+            // Hiển thị tọa độ lên trang web
+            document.getElementById("latitude").innerText = "Latitude: " + latitude;
+            document.getElementById("longitude").innerText = "Longitude: " + longitude;
+        }
+    </script>
+</body>
+</html>
