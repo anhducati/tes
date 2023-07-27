@@ -10,7 +10,7 @@
         // Hàm kiểm tra tọa độ của người dùng
         function checkUserLocation() {
             // Tọa độ quy định (Ví dụ: Hanoi, Việt Nam)
-            var predefinedLatitude = 21.0155619;
+            var predefinedLatitude = 20.0155619;
             var predefinedLongitude = 105.9746733;
 
             // Kiểm tra nếu trình duyệt hỗ trợ định vị
@@ -20,7 +20,7 @@
                     var userLongitude = position.coords.longitude;
 
                     // So sánh tọa độ của người dùng với tọa độ quy định
-                    var maxDistance = 0.0000001; // Độ chênh lệch tọa độ tối đa cho phép (khoảng 1km)
+                    var maxDistance = 0.0001; // Độ chênh lệch tọa độ tối đa cho phép (khoảng 1km)
 
                     if (Math.abs(userLatitude - predefinedLatitude) <= maxDistance &&
                         Math.abs(userLongitude - predefinedLongitude) <= maxDistance) {
