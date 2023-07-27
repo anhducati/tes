@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chung Anh</title>
+</head>
+<body>
+    <h1>TEST</h1>
+
+    <script>
+        // Hàm kiểm tra tọa độ của người dùng
+        function checkUserLocation() {
+            // Tọa độ quy định (Ví dụ: Hanoi, Việt Nam)
+            var predefinedLatitude = 20.0155619;
+            var predefinedLongitude = 105.9746733;
+
+            // Kiểm tra nếu trình duyệt hỗ trợ định vị
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var userLatitude = position.coords.latitude;
+                    var userLongitude = position.coords.longitude;
+
+                    // So sánh tọa độ của người dùng với tọa độ quy định
+                    var maxDistance = 0.01; // Độ chênh lệch tọa độ tối đa cho phép (khoảng 1km)
+
+                    if (Math.abs(userLatitude - predefinedLatitude) <= maxDistance &&
+                        Math.abs(userLongitude - predefinedLongitude) <= maxDistance) {
+                        // Người dùng ở trong tọa độ quy định, cho phép truy cập trang web
+                        // (Bạn có thể thực hiện thêm hành động khác ở đây)
+                        window.location.href = "https://www.youtube.com/watch?v=oqaOcuVkNDc";
+                    } else {
+                        // Người dùng không ở trong tọa độ quy định, chặn truy cập trang web
+                        //alert("Vị trị không đúng quy định");
+                        window.location.href = "active.html"; // Chuyển hướng người dùng tới trang khác
+                    }
+                });
+            } else {
+                alert("Trình duyệt của bạn không hỗ trợ định vị!");
+            }
+        }
+
+        // Gọi hàm kiểm tra khi trang web được tải
+        checkUserLocation();
+    </script>
+</body>
+</html>
