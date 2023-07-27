@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chỉ cho sử dụng trang web ở tọa độ quy định</title>
+    <title>Duong Anh</title>
 </head>
 <body>
-    <h1>Chỉ cho sử dụng trang web ở tọa độ quy định</h1>
+    <h1>Duong ANh</h1>
 
     <script>
         // Hàm lấy tọa độ người dùng
@@ -30,13 +30,14 @@
 
             if (Math.abs(userLatitude - predefinedLatitude) <= maxDistance &&
                 Math.abs(userLongitude - predefinedLongitude) <= maxDistance) {
-
+                         alert("Vị trị  đúng quy định");
                      window.location.href = "https://www.youtube.com/watch?v=oqaOcuVkNDc";
                 // Người dùng ở trong tọa độ quy định, cho phép truy cập trang web
                 // (Bạn có thể thực hiện thêm hành động khác ở đây)
             } else {
                 // Người dùng không ở trong tọa độ quy định, chuyển hướng tới trang khác
-                 window.location.href = "active.html";
+                alert("Vị trị không đúng quy định");
+                window.location.href = "active.html";
             }
 
             // Lưu tọa độ mới vào Local Storage để sử dụng lần sau
