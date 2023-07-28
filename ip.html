@@ -14,6 +14,7 @@
 
     <p id="latitude"> </p>
     <p id="longitude"> </p>
+    <p id="ipAddress"></p>
     <script>
         // Hàm lấy tọa độ người dùng
         function getLocation() {
@@ -32,7 +33,28 @@
             // Hiển thị tọa độ lên trang web
             document.getElementById("latitude").innerText = "Vĩ độ: " + latitude;
             document.getElementById("longitude").innerText = "Kinh độ: " + longitude;
+            getIPAddress();
         }
+          // Hàm lấy địa chỉ IP thông qua ipify.org
+          function getIPAddress() {
+            // Gửi yêu cầu HTTP GET thông qua proxy của ipify.org
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    // Lấy địa chỉ IP của người dùng
+                    var ipAddress = data.ip;
+
+                    // Hiển thị địa chỉ IP trong phần tử HTML có id="ipAddress"
+                    document.getElementById("ipAddress").innerText = "Địa chỉ IP của bạn là: " + ipAddress;
+                })
+                .catch(error => {
+                    console.error('Lỗi khi lấy địa chỉ IP: ', error);
+                });
+        }
+
+       
+       
+
     </script>
 </body>
 </html>
