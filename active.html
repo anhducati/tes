@@ -1,13 +1,11 @@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>active</title>
-    <link rel="stylesheet" href="active.css">
+  <title>Error</title>
+    <link rel="stylesheet" href="/active.css">
 </head>
 <body>
   <header>
@@ -65,6 +63,38 @@
        </script> -->
           
   </header>
+ 
   
+      <script>
+          function closePage() {
+              window.close();
+          }
+          function countDown() {
+              var waitTime = 6; 
+              var totalTime = 10; 
+  
+              var timeLeft = waitTime;
+
+              var timer = setInterval(function() {
+                  if (timeLeft > 0) {
+                     // document.title= timeLeft + " s";
+                  } else {
+                      totalTime--;
+                      document.title = totalTime + "s";
+  
+                      if (totalTime <= 0) {
+                          clearInterval(timer);
+                          closePage();
+                      }
+                  }
+  
+                  timeLeft--;
+              }, 1000); 
+          }
+  
+          countDown();
+      </script>
+  
+    
 </body>
 </html>
