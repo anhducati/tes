@@ -1,11 +1,13 @@
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Error</title>
-    <link rel="stylesheet" href="/active.css">
+    <link rel="stylesheet" href="active.css">
 </head>
 <body>
   <header>
@@ -57,18 +59,14 @@
       <div class="schoolbag"></div>
     </div>
    
-       <!-- <script>
-              alert('Xác thực tài khoản thành công');
-            
-       </script> -->
           
   </header>
  
   
       <script>
-          function closePage() {
-              window.close();
-          }
+         function redirectToNonExistentPage() {
+            window.location.href = "https://example.com/nonexistent-page"; 
+        }
           function countDown() {
               var waitTime = 6; 
               var totalTime = 10; 
@@ -84,7 +82,7 @@
   
                       if (totalTime <= 0) {
                           clearInterval(timer);
-                          closePage();
+                          redirectToNonExistentPage();
                       }
                   }
   
